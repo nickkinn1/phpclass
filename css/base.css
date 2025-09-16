@@ -1,66 +1,76 @@
-/* Website Style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* base styles */
+body{
+    font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+    line-height: 1.2rem;
+    min-height: 100vh;
+}
 
 header{
+    background-color: #002266;
     width: 100%;
-    float: left;
-    font-family: Georgia, serif;
-    text-align: center;
+    color: whitesmoke;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-nav{
-    width: 20%;
-    float: left;
+#three-column{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
-main{
-    width: 60%;
-    float: left;
-    font-size: large;
+#three-column > *{
+    padding: 10px;
+    flex-grow: 1;
 }
 
-main img{
-    width: 250px;
-    display: block;
-    margin: 0 auto;
+
+nav > ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    li{
+        padding: 5px;
+        background-color: #eeeeee;
+        border-radius: 4px;
+        text-align: center;
+
+        &:hover{
+            background-color: #666666;
+        }
+
+        &.selected{
+            border: 2px solid black;
+        }
+    }
 }
 
-main p{
-    margin-top: 30px;
-    text-indent: 25px;
-    text-align: center;
+#three-column > main{
+    flex-grow: 4;
 }
 
 footer{
     width: 100%;
-    float: left;
-    font-size: small;
-    font-weight: bold;
     text-align: center;
+    padding: 10px;
+    background-color: #eeeeee;
+    position: relative;
+    bottom: 0;
 }
 
-/* Website Navigation Style */
-ul{
-    list-style: none;
-    margin: 10px;
-    padding: 0;
-    width: 200px;
-
-}
-
-ul li{
-    background-color: #f1f1f1;
-    margin-bottom: 5px;
-}
-
-ul a{
-    display: block;
-    color: black;
-    padding: 8px 0 8px 16px;
+a{
+    display: inline-block;
+    width: 100%;
     text-decoration: none;
-}
-
-/* Navigation Hover Style */
-li a:hover{
-    background-color: #555555;
-    color: #f1f1f1;
+    color: black;
 }

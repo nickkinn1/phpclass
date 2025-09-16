@@ -1,6 +1,4 @@
-<?php
-    $pageName = "home";
-?><!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,21 +10,21 @@
 </head>
 <body>
 
-    <?php
-    include "includes/header.php";
-    ?>
+<?php
+include "../includes/header.php";
+?>
 
-    <div id="three-column">
-        <?php
-        include "includes/navigation.php";
-        ?>
-        <main>
-            <p>Content...</p>
-        </main>
-    </div>
-
+<div id="three-column">
     <?php
-    include "includes/footer.php";
+    include "../includes/navigation.php";
     ?>
+    <main>
+        <p>Content...</p>
+    </main>
+</div>
+
+<?php
+include "../includes/footer.php";
+?>
 </body>
 </html>
