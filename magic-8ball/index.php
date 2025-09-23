@@ -50,19 +50,20 @@
     <link rel="stylesheet" href="/css/base.css">
 </head>
 <body>
+<div class="content">
+    <?php include "../includes/header.php"; ?>
 
-<?php include "../includes/header.php"; ?>
-
-<div id="three-column">
-    <?php include "../includes/navigation.php"; ?>
-    <main>
-        <h2>Magic 8 Ball</h2>
-        <p class="answer"><?=$answer?></p>
-        <form method="post">
-            <input type="text" name="question" id="question" value="<?=$question?>" placeholder="question">
-            <input type="submit" value="Ask the Magic 8 Ball">
-        </form>
-    </main>
+    <div id="three-column">
+        <?php include "../includes/navigation.php"; ?>
+        <main>
+            <h2>Magic 8 Ball</h2>
+            <p class="answer"><?=$answer?></p>
+            <form method="post">
+                <input type="text" name="question" id="question" value="<?=$question?>" placeholder="question">
+                <input type="submit" value="Ask the Magic 8 Ball">
+            </form>
+        </main>
+    </div>
 </div>
 
 <?php include "../includes/footer.php"; ?>

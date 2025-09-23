@@ -10,14 +10,15 @@
     <link rel="stylesheet" href="/css/base.css">
 </head>
 <body>
+<div class="content">
+    <?php include "../includes/header.php"; ?>
 
-<?php include "../includes/header.php"; ?>
-
-<div id="three-column">
-    <?php include "../includes/navigation.php"; ?>
-    <main>
-        <p>Content...</p>
-    </main>
+    <div id="three-column">
+        <?php include "../includes/navigation.php"; ?>
+        <main>
+            <p>Content...</p>
+        </main>
+    </div>
 </div>
 
 <?php include "../includes/footer.php"; ?>
