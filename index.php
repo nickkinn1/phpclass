@@ -1,5 +1,5 @@
 <?php
-    $pageName = "home";
+
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -11,20 +11,20 @@
     <link rel="stylesheet" href="/css/base.css">
 </head>
 <body>
-
-    <?php
-    include "includes/header.php";
-    ?>
-
-    <div id="three-column">
+    <div class="content">
         <?php
-        include "includes/navigation.php";
+        include "includes/header.php";
         ?>
-        <main>
-            <p>Content...</p>
-        </main>
-    </div>
 
+        <div id="three-column">
+            <?php
+            include "includes/navigation.php";
+            ?>
+            <main>
+                <p>Content...</p>
+            </main>
+        </div>
+    </div>
     <?php
     include "includes/footer.php";
     ?>

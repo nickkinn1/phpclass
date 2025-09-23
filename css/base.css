@@ -9,6 +9,13 @@ body{
     font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
     line-height: 1.2rem;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    /* Push footer to bottom of screen.*/
+    flex: 1 0 auto;
 }
 
 header{
@@ -17,8 +24,8 @@ header{
     color: whitesmoke;
     min-height: 100px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding-left: 2rem;
 }
 
 #three-column{
@@ -31,7 +38,6 @@ header{
     padding: 10px;
     flex-grow: 1;
 }
-
 
 nav > ul{
     list-style: none;
@@ -64,8 +70,8 @@ footer{
     text-align: center;
     padding: 10px;
     background-color: #eeeeee;
-    position: relative;
-    bottom: 0;
+    /* Push footer to bottom of screen.*/
+    flex-shrink: 0;
 }
 
 a{
