@@ -80,3 +80,22 @@ a{
     text-decoration: none;
     color: black;
 }
+
+table, td, th{
+    border: black 1px solid
+}
+
+table {
+    width: 80%;
+    margin: 1rem auto;
+    border-collapse: collapse;
+
+    th {
+        text-align: left;
+    }
+
+    td{
+        padding: .2rem;
+    }
+}
+
