@@ -27,28 +27,24 @@
 </head>
 <body>
 <div class="content">
-    <?php include "../includes/header.php"; ?>
+    <?php include "../includes/navigation.php"; ?>
+    <main>
+        <div>
+            <h3>Your Score: <?=$p1Score?></h3>
+            <img src="imgs/dice_<?=$p1One?>.png" alt="1">
+            <img src="imgs/dice_<?=$p1Two?>.png" alt="1">
+        </div>
 
-    <div id="three-column">
-        <?php include "../includes/navigation.php"; ?>
-        <main>
-            <div>
-                <h3>Your Score: <?=$p1Score?></h3>
-                <img src="imgs/dice_<?=$p1One?>.png" alt="1">
-                <img src="imgs/dice_<?=$p1Two?>.png" alt="1">
-            </div>
+        <div>
+            <h3>Computer Score: <?=$p2Score?></h3>
+            <img src="imgs/dice_<?=$p2One?>.png" alt="1">
+            <img src="imgs/dice_<?=$p2Two?>.png" alt="1">
+            <img src="imgs/dice_<?=$p2Three?>.png" alt="1">
+        </div>
 
-            <div>
-                <h3>Computer Score: <?=$p2Score?></h3>
-                <img src="imgs/dice_<?=$p2One?>.png" alt="1">
-                <img src="imgs/dice_<?=$p2Two?>.png" alt="1">
-                <img src="imgs/dice_<?=$p2Three?>.png" alt="1">
-            </div>
-
-            <br />
-            <h2>Result: <?=$result?></h2>
-        </main>
-    </div>
+        <br />
+        <h2>Result: <?=$result?></h2>
+    </main>
 </div>
 
 <?php include "../includes/footer.php"; ?>

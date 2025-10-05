@@ -42,17 +42,39 @@ $seconds = $seconds - ($minutes * $secPerMin);
     <link rel="stylesheet" href="/css/base.css">
 </head>
 <body>
-<div class="content">
-    <?php include "../includes/header.php"; ?>
-
-    <div id="three-column">
+    <div class="content">
         <?php include "../includes/navigation.php"; ?>
-        <main style="text-align: center">
-            <h1 style="margin: 2rem 0 1rem 0">Countdown to end of semester</h1>
-            <h3>| Years <?=$years?> | Days <?=$days?> | Hours <?=$hours?> | Minutes <?=$minutes?> | Seconds <?=$seconds?> |</h3>
+        <main class="countdown-page">
+            <h2>Countdown to end of semester</h2>
+            <section class="countdown">
+                <div>
+                    <p><?=$years?></p>
+                    <p>Years</p>
+                </div>
+
+                <div>
+                    <p><?=$days?></p>
+                    <p>Days</p>
+                </div>
+
+                <div>
+                    <p><?=$hours?></p>
+                    <p>Hours</p>
+                </div>
+
+                <div>
+                    <p><?=$minutes?></p>
+                    <p>Minutes</p>
+                </div>
+
+                <div>
+                    <p><?=$seconds?></p>
+                    <p>Seconds</p>
+                </div>
+            </section>
+            <!-- <h3>| Years <?=$years?> | Days <?=$days?> | Hours <?=$hours?> | Minutes <?=$minutes?> | Seconds <?=$seconds?> |</h3> -->
         </main>
     </div>
-</div>
-<?php include "../includes/footer.php"; ?>
+    <?php include "../includes/footer.php"; ?>
 </body>
 </html>

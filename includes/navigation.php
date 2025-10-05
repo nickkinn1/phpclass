@@ -5,13 +5,19 @@ $isCountdown = $_SERVER["REQUEST_URI"] == "/countdown/" ? "selected" : "";
 $isMagic8Ball = $_SERVER["REQUEST_URI"] == "/magic-8ball/" ? "selected" : "";
 $isDice = $_SERVER["REQUEST_URI"] == "/dice/" ? "selected" : "";
 $isMovieList = $_SERVER["REQUEST_URI"] == "/movie-list/" ? "selected" : "";
+
+$svg = array("");
+include $_SERVER['DOCUMENT_ROOT']."/images/svgs.php"
+
 ?><nav>
+    <h1><a href="/">Nick's Website</a></h1>
+
     <ul>
-        <li class="<?=$isHome?>"><a href="/">Home</a></li>
-        <li class="<?=$isLoops?>"><a href="/loops">Loops</a></li>
-        <li class="<?=$isCountdown?>"><a href="/countdown">Countdown</a></li>
-        <li class="<?=$isMagic8Ball?>"><a href="/magic-8ball">Magic 8 Ball</a></li>
-        <li class="<?=$isDice?>"><a href="/dice">Dice</a></li>
-        <li class="<?=$isMovieList?>"><a href="/movie-list">Movie List</a></li>
+        <li class="<?=$isHome?>"><a href="/"><?=$svg["home"]?><p>Home</p></a></li>
+        <li class="<?=$isLoops?>"><a href="/loops"><?=$svg["loops"]?><p>Loops</p></a></li>
+        <li class="<?=$isCountdown?>"><a href="/countdown"><?=$svg["countdown"]?><p>Countdown</p></a></li>
+        <li class="<?=$isMagic8Ball?>"><a href="/magic-8ball"><?=$svg["magic"]?><p>Magic 8 Ball</p></a></li>
+        <li class="<?=$isDice?>"><a href="/dice"><?=$svg["dice"]?><p>Dice</p></a></li>
+        <li class="<?=$isMovieList?>"><a href="/movie-list"><?=$svg["movie"]?><p>Movie List</p></a></li>
     </ul>
 </nav>
