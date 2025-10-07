@@ -9,6 +9,42 @@ a{
     text-decoration: none;
 }
 
+.button{
+    background-color: #364e4d;
+    border: none;
+    padding: .5rem;
+    border-radius: 3px;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.main-form{
+    background-color: #282828;
+    border-radius: 5px;
+    padding: 2rem 3rem;
+
+    .input-div{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+
+        label{
+            font-size: .8rem;
+            margin-bottom: .1rem;
+        }
+
+        input{
+            background-color: #364e4d;
+            border: none;
+            border-radius: 3px;
+            padding: .2rem;
+            font-size: 1rem;
+        }
+    }
+}
+
 table, td, th{
     border: 1px solid;
     padding: .2rem;
@@ -79,7 +115,7 @@ main{
 
 
 
-/*MOVIE LIST*/
+/*MOVIE LIST PAGE*/
 .movie-list{
     h2{
         margin-bottom: 1rem;
@@ -88,8 +124,22 @@ main{
 
     table{
         width: 40rem;
+        margin-bottom: 2rem;
     }
 }
+
+
+
+/*ADD MOVIE PAGE*/
+.add-movie-page{
+    h2{
+        text-align: center;
+        margin-bottom: .5rem;
+    }
+}
+
+
+
 
 /*COUNTDOWN PAGE*/
 .countdown-page{
@@ -140,6 +190,8 @@ main{
         margin-bottom: 2rem;
     }
 }
+
+
 
 
 

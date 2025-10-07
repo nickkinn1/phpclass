@@ -21,7 +21,8 @@
                 <th>Rating</th>
             </tr>
             <?php
-            $con = mysqli_connect("localhost", "dbuser", "dbdev123","phpclass");
+            include "../includes/db.php";
+            $con = getDbConnection();
             $result = mysqli_query($con,"SELECT * FROM movielist");
 
             while ($row = mysqli_fetch_array($result)){
@@ -37,6 +38,7 @@
             }
             ?>
         </table>
+        <a class="button" href="addmovie.php">Add a New Movie</a>
     </main>
 </div>
 <?php include "../includes/footer.php"; ?>
