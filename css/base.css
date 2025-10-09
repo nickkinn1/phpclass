@@ -14,6 +14,7 @@ a{
     border: none;
     padding: .5rem;
     border-radius: 3px;
+    font-size: .9rem;
 
     &:hover{
         cursor: pointer;
@@ -31,7 +32,7 @@ a{
         margin-bottom: 1rem;
 
         label{
-            font-size: .8rem;
+            font-size: .9rem;
             margin-bottom: .1rem;
         }
 
@@ -39,9 +40,49 @@ a{
             background-color: #364e4d;
             border: none;
             border-radius: 3px;
-            padding: .2rem;
-            font-size: 1rem;
+            padding: .5rem;
+            font-size: .9rem;
         }
+    }
+}
+
+.large-form{
+    background-color: #282828;
+    border-radius: 5px;
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+
+    .group-inputs-div{
+        display: flex;
+        gap: 1rem;
+    }
+
+    .input-div{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: .2rem;
+
+        label{
+            font-size: .9rem;
+            margin-bottom: .1rem;
+        }
+
+        input{
+            background-color: #364e4d;
+            border: none;
+            border-radius: 3px;
+            padding: .5rem;
+            font-size: .9rem;
+        }
+
+        #email, #address{
+            width:25rem;
+        }
+    }
+
+    button{
+        margin-top: 1rem;
     }
 }
 
@@ -115,8 +156,8 @@ main{
 
 
 
-/*MOVIE LIST PAGE*/
-.movie-list{
+/*MOVIE LIST AND CUSTOMERS PAGE*/
+.movie-list-page{
     h2{
         margin-bottom: 1rem;
         text-align: center;
@@ -131,7 +172,7 @@ main{
 
 
 /*ADD MOVIE PAGE*/
-.add-movie-page{
+.add-movie-page, .add-customer-page{
     h2{
         text-align: center;
         margin-bottom: .5rem;
@@ -187,6 +228,20 @@ main{
     text-align: center;
 
     h2{
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+/*CUSTOMERS PAGE*/
+.customers-page{
+    h2{
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    table{
         margin-bottom: 2rem;
     }
 }

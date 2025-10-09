@@ -12,7 +12,7 @@
 <body>
 <div class="content">
     <?php include "../includes/navigation.php"; ?>
-    <main class="movie-list">
+    <main class="movie-list-page">
         <h2>My Movie List</h2>
         <table>
             <tr>
