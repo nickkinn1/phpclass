@@ -44,6 +44,11 @@ a{
             font-size: .9rem;
         }
     }
+
+    .buttons-div{
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .large-form{
@@ -173,7 +178,7 @@ main{
 
 /*ADD MOVIE PAGE*/
 .add-movie-page, .add-customer-page{
-    h2{
+    h2 {
         text-align: center;
         margin-bottom: .5rem;
     }

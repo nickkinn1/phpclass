@@ -1,4 +1,6 @@
 <?php
+    $svg = array("");
+    include $_SERVER['DOCUMENT_ROOT']."/images/svgs.php"
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -32,7 +34,7 @@
 
                 echo "<tr>";
                 echo "    <td>$movieID</td>";
-                echo "    <td>$movieTitle</td>";
+                echo "    <td><a href='updateMovie.php?id=$movieID'>$movieTitle</a></td>";
                 echo "    <td>$movieRating</td>";
                 echo "</tr>";
             }
