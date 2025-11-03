@@ -86,6 +86,17 @@ a{
         }
     }
 
+    #large-form-delete{
+        width: fit-content;
+        margin-left: auto;
+        padding: .1rem;
+
+        svg{
+            fill: darkred;
+            width: 2rem;
+        }
+    }
+
     button{
         margin-top: 1rem;
     }

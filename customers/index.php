@@ -32,9 +32,10 @@
         <?php
         $result = mysqli_query($con,"SELECT ID, fName, lName, address, city, state, zip, phone, email FROM customers");
         while($customer = mysqli_fetch_assoc($result)){
+            $customerID = $customer["ID"];
             echo "<tr>";
             foreach ($customer as $column){
-                echo "<td>$column</td>";
+                echo "<td><a href='updateCustomer.php?id=$customerID'>$column</a></td>";
             }
             echo "<td>Secret</td>";
             echo "</tr>";

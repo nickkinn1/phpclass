@@ -79,7 +79,7 @@ if(!empty($_GET["id"])){
 
             <div class="buttons-div">
                 <button class="button" type="submit">Save</button>
-                <button type="button" id="movie-delete-button" class="button" onclick="deleteMovie('<?=$txtTitle?>', '<?=$id?>')">x</button>
+                <button type="button" class="button" onclick="deleteMovie('<?=$txtTitle?>', '<?=$id?>')">x</button>
             </div>
         </form>
     </main>
