@@ -1,19 +1,22 @@
 <?php
-if(!empty($_POST["txtUsername"]) && !empty($_POST["txtPassword"])){
-    include "../includes/db.php";
-    $con = getDbConnection();
+    session_start();
 
-    $username = $_POST["txtUsername"];
-    $password = $_POST["txtPassword"];
+    if(!empty($_POST["txtUsername"]) && !empty($_POST["txtPassword"])){
+        include "../includes/db.php";
+        $con = getDbConnection();
 
-    if ($username == "admin" && $password == "password"){
-        header("Location:admin.php");
-    } elseif ($username == "member" && $password == "password"){
-        header("Location:member.php");
-    } else {
-        $msg = "Incorrect Credentials...";
+        $username = $_POST["txtUsername"];
+        $password = $_POST["txtPassword"];
+
+        if ($username == "admin" && $password == "password"){
+            $_SESSION["UID"] =1;
+            header("Location:admin.php");
+        } elseif ($username == "member" && $password == "password"){
+            header("Location:member.php");
+        } else {
+            $msg = "Incorrect Credentials...";
+        }
     }
-}
 ?><!doctype html>
 <html lang="en">
 <head>

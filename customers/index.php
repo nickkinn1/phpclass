@@ -29,19 +29,23 @@
                 <th>Email</th>
                 <th>Password</th>
             </tr>
-        <?php
-        $result = mysqli_query($con,"SELECT ID, fName, lName, address, city, state, zip, phone, email FROM customers");
-        while($customer = mysqli_fetch_assoc($result)){
-            $customerID = $customer["ID"];
-            echo "<tr>";
-            foreach ($customer as $column){
-                echo "<td><a href='updateCustomer.php?id=$customerID'>$column</a></td>";
-            }
-            echo "<td>Secret</td>";
-            echo "</tr>";
-        }
+            <?php
+            include "../includes/db.php";
+            $con = getDbConnection();
+            $result = mysqli_query($con,"SELECT * FROM movielist");
 
-        ?>
+            while ($row = mysqli_fetch_array($result)){
+                $movieID = $row["movieID"];
+                $movieTitle = $row["movieTitle"];
+                $movieRating = $row["movieRating"];
+
+                echo "<tr>";
+                echo "    <td>$movieID</td>";
+                echo "    <td><a href='updateMovie.php?id=$movieID'>$movieTitle</a></td>";
+                echo "    <td>$movieRating</td>";
+                echo "</tr>";
+            }
+            ?>
         </table>
         <a class="button" href="addCustomer.php">Add a New Customer</a>
     </main>
