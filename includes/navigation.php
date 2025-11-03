@@ -6,6 +6,7 @@ $isMagic8Ball = $_SERVER["REQUEST_URI"] == "/magic-8ball/" ? "selected" : "";
 $isDice = $_SERVER["REQUEST_URI"] == "/dice/" ? "selected" : "";
 $isMovieList = $_SERVER["REQUEST_URI"] == "/movie-list/" ? "selected" : "";
 $isCustomers = $_SERVER["REQUEST_URI"] == "/customers/" ? "selected" : "";
+$isLogin = $_SERVER["REQUEST_URI"] == "/login/" ? "selected" : "";
 
 $svg = array("");
 include $_SERVER['DOCUMENT_ROOT']."/images/svgs.php"
@@ -21,6 +22,6 @@ include $_SERVER['DOCUMENT_ROOT']."/images/svgs.php"
         <li class="<?=$isDice?>"><a href="/dice"><?=$svg["dice"]?><p>Dice</p></a></li>
         <li class="<?=$isMovieList?>"><a href="/movie-list"><?=$svg["movie"]?><p>Movie List</p></a></li>
         <li class="<?=$isCustomers?>"><a href="/customers"><?=$svg["customers"]?><p>Customers</p></a></li>
-
+        <li class="<?=$isLogin?>"><a href="/login"><?=$svg["login"]?><p>Login</p></a></li>
     </ul>
 </nav>

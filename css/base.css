@@ -24,7 +24,11 @@ a{
 .main-form{
     background-color: #282828;
     border-radius: 5px;
-    padding: 2rem 3rem;
+    padding: 1.8rem 4rem;
+
+    :last-child{
+        margin-bottom: 0;
+    }
 
     .input-div{
         display: flex;
@@ -42,12 +46,35 @@ a{
             border-radius: 3px;
             padding: .5rem;
             font-size: .9rem;
+            width: 15rem;
+        }
+
+        select{
+            background-color: #364e4d;
+            border: none;
+            border-radius: 3px;
+            padding: .5rem;
+            font-size: .9rem;
         }
     }
 
     .buttons-div{
         display: flex;
         justify-content: space-between;
+        margin-top: 1.5rem;
+    }
+
+    .form-spacer{
+        height: .5rem;
+    }
+
+    .closer-div{
+        margin-top: -.6rem;
+    }
+
+    #err{
+        color: red;
+        font-size: 1rem;
     }
 }
 
@@ -89,11 +116,11 @@ a{
     #large-form-delete{
         width: fit-content;
         margin-left: auto;
-        padding: .1rem;
+        padding: .3rem;
 
         svg{
             fill: darkred;
-            width: 2rem;
+            width: 1.5rem;
         }
     }
 
