@@ -1,6 +1,9 @@
 <?php
     session_start();
 
+    include "../includes/db.php";
+    $con = getDbConnection();
+
     $err = "";
     $success = "";
 
@@ -41,9 +44,6 @@
 
         if($err == ""){
             $userKey = "xxxxxxxxx";
-
-            include "../includes/db.php";
-            $con = getDbConnection();
 
             try {
                 $query = "INSERT INTO users (username, email, password, roleID, userKey) VALUES (?,?,?,?,?);";
@@ -105,8 +105,6 @@
                 <select name="selectRole" id="selectRole">
                     <option value="" disabled selected></option>
                     <?php
-                    include "../includes/db.php";
-                    $con = getDbConnection();
                     $result = mysqli_query($con,"SELECT * FROM roles");
 
                     while ($role = mysqli_fetch_array($result)){
