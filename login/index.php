@@ -8,11 +8,34 @@
         $username = $_POST["txtUsername"];
         $password = $_POST["txtPassword"];
 
-        if ($username == "admin" && $password == "password"){
-            $_SESSION["UID"] =1;
-            header("Location:admin.php");
-        } elseif ($username == "member" && $password == "password"){
-            header("Location:member.php");
+        $query = "SELECT password, userKey, roleID, ID FROM users WHERE username = ?";
+        $stmt = mysqli_prepare($con, $query);
+        mysqli_stmt_bind_param($stmt, "s", $username);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $row = mysqli_fetch_array($result);
+
+        if ($row != null) {
+            $dbPassword = $row["password"];
+            $dbUserKey = $row["userKey"];
+            $dbRoleID = $row["roleID"];
+            $dbUserID = $row["ID"];
+
+            if ($dbPassword == md5($password . $dbUserKey)){
+                $_SESSION["roleID"] = $dbRoleID;
+                $_SESSION["UID"] = $dbUserID;
+
+                switch ($dbRoleID){
+                    case 3:
+                        header("Location: admin.php");
+                        break;
+                    default:
+                        header("Location: member.php");
+                }
+
+            } else {
+                $msg = "Incorrect Credentials...";
+            }
         } else {
             $msg = "Incorrect Credentials...";
         }

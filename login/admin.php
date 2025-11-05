@@ -7,7 +7,7 @@
     $err = "";
     $success = "";
 
-    if(!isset($_SESSION["UID"])){
+    if($_SESSION["roleID"] != 3){
        header("Location: index.php");
     }
 
@@ -43,12 +43,13 @@
         }
 
         if($err == ""){
-            $userKey = "xxxxxxxxx";
+            $userKey = sprintf('%04X%04X-%04X-%04X-%04X-%04X%04X%04X', mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(16384, 20479), mt_rand(32768, 49151), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535));;
+            $hashedPassword = md5($password . $userKey);
 
             try {
                 $query = "INSERT INTO users (username, email, password, roleID, userKey) VALUES (?,?,?,?,?);";
                 $stmt = mysqli_prepare($con, $query);
-                mysqli_stmt_bind_param($stmt, "sssis", $username, $email, $password, $role, $userKey);
+                mysqli_stmt_bind_param($stmt, "sssis", $username, $email, $hashedPassword, $role, $userKey);
                 mysqli_stmt_execute($stmt);
 
                 $username = $email = $password = $password2 = "";
