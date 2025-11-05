@@ -14,9 +14,12 @@
         $zip = $_GET["zip"];
 
         try {
+            $salt = sprintf('%04X%04X-%04X-%04X-%04X-%04X%04X%04X', mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(16384, 20479), mt_rand(32768, 49151), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535));;
+            $hashedPassword = md5($password . $salt);
+
             $query = "INSERT INTO customers (fName, lName, phone, email, password, address, city, state, zip) VALUES (?,?,?,?,?,?,?,?,?);";
             $stmt = mysqli_prepare($con, $query);
-            mysqli_stmt_bind_param($stmt, "sssssssss", $fName, $lName, $phone, $email, $password, $address, $city, $state, $zip);
+            mysqli_stmt_bind_param($stmt, "sssssssss", $fName, $lName, $phone, $email, $hashedPassword, $address, $city, $state, $zip);
             mysqli_stmt_execute($stmt);
 
             header("Location:index.php");
