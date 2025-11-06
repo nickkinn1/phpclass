@@ -27,7 +27,7 @@
 
                 switch ($dbRoleID){
                     case 3:
-                        header("Location: admin.php");
+                        header("Location: admin_page.php");
                         break;
                     default:
                         header("Location: member.php");
