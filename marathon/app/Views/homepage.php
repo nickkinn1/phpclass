@@ -9,7 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Landing Page - Start Bootstrap Theme</title>
+    <title>Marathon Master</title>
+
+    <?php
+        if(isset($load_error)){
+            $load_error=null;
+            echo "<script>document.location.href = '#login'</script>";
+        }
+    ?>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -56,6 +63,9 @@
                 </li>
                 <li>
                     <a href="#contact">Contact</a>
+                </li>
+                <li>
+                    <a href="#login">Login</a>
                 </li>
             </ul>
         </div>
@@ -153,6 +163,54 @@
 </div>
 <!-- /.content-section-a -->
 
+<a name="login"></a>
+<div class="content-section-b">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm12">
+                <?php
+                    $validation = service("validation");
+                    echo $validation->getError("username");
+                    echo "<br />";
+                    echo $validation->getError("password");
+
+                    if(isset($error_message)){
+                        echo $error_message;
+                    }
+                ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-1 col-sm-6">
+                <h2>Login</h2>
+                <?php
+                echo form_open("http://10.7.66.24/marathon/public/login");
+                echo form_input("username", "", 'placeholder="Username"');
+                echo form_password("password", "", 'placeholder="Password"');
+                echo form_submit("submit", "Login");
+                echo form_close();
+                ?>
+            </div>
+            <div class="col-lg-5 col-sm-6">
+                <h2>Create Account</h2>
+                <?php
+                echo form_open("http://10.7.66.24/marathon/public/create");
+                echo form_input("username", "", 'placeholder="Username"');
+                echo form_input("email", "", 'placeholder="Email"');
+                echo form_password("password", "", 'placeholder="Password"');
+                echo form_password("password2", "", 'placeholder="Retype Password"');
+                echo form_submit("submit", "Create Account");
+                echo form_close();
+                ?>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+</div>
+
 <a  name="contact"></a>
 <div class="banner">
 
@@ -197,6 +255,9 @@
                     <li class="footer-menu-divider">&sdot;</li>
                     <li>
                         <a href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#login">Login</a>
                     </li>
                 </ul>
                 <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
