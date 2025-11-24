@@ -19,6 +19,12 @@ class Member extends Model
             $password = md5($password . $userKey);
 
             if($password === $dbPass){
+                $this->session = service("session");
+                $this->session->start();
+
+                $this->session->set("roleID", $row->roleID);
+                $this->session->set("UID", $row->userKey);
+
                 return true;
             } else {
                 return false;

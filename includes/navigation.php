@@ -23,5 +23,6 @@ include $_SERVER['DOCUMENT_ROOT']."/images/svgs.php"
         <li class="<?=$isMovieList?>"><a href="/movie-list"><?=$svg["movie"]?><p>Movie List</p></a></li>
         <li class="<?=$isCustomers?>"><a href="/customers"><?=$svg["customers"]?><p>Customers</p></a></li>
         <li class="<?=$isLogin?>"><a href="/login"><?=$svg["login"]?><p>Login</p></a></li>
+        <li><a href="/marathon/public" target="_blank"><?=$svg["runner"]?><p>Marathon Site</p></a></li>
     </ul>
 </nav>

@@ -186,7 +186,7 @@
                 <h2>Login</h2>
                 <?php
                 echo form_open("http://10.7.66.24/marathon/public/login");
-                echo form_input("username", "", 'placeholder="Username"');
+                echo form_input("username", "", 'placeholder="Username" autocomplete="off"');
                 echo form_password("password", "", 'placeholder="Password"');
                 echo form_submit("submit", "Login");
                 echo form_close();
@@ -196,8 +196,8 @@
                 <h2>Create Account</h2>
                 <?php
                 echo form_open("http://10.7.66.24/marathon/public/create");
-                echo form_input("username", "", 'placeholder="Username"');
-                echo form_input("email", "", 'placeholder="Email"');
+                echo form_input("username", "", 'placeholder="Username" autocomplete="off"');
+                echo form_input("email", "", 'placeholder="Email" autocomplete="off"');
                 echo form_password("password", "", 'placeholder="Password"');
                 echo form_password("password2", "", 'placeholder="Retype Password"');
                 echo form_submit("submit", "Create Account");
