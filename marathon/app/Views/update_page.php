@@ -12,13 +12,13 @@
     <title>SB Admin - Bootstrap Admin Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="../css/sb-admin.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,7 +49,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Add Marathon
+                        Edit Race
                     </h1>
                 </div>
             </div>
@@ -58,28 +58,29 @@
             <div class="row">
                 <div class="col-lg-12">
 
-                    <form role="form" method="post" action="/marathon/public/add_race">
+                    <form role="form" method="post" action="/marathon/public/edit_race">
 
                         <div class="form-group">
                             <label for="race_name">Race Name</label>
-                            <input name="race_name" id="race_name" class="form-control">
+                            <input name="race_name" id="race_name" class="form-control" value="<?=$race['raceName'];?>">
                         </div>
 
                         <div class="form-group">
                             <label for="race_location">Race Location</label>
-                            <input name="race_location" id="race_location" class="form-control">
+                            <input name="race_location" id="race_location" class="form-control" value="<?=$race['raceLocation'];?>">
                         </div>
 
                         <div class="form-group">
                             <label for="race_description">Race Description</label>
-                            <textarea name="race_description" id="race_description" class="form-control" rows="3"></textarea>
+                            <textarea name="race_description" id="race_description" class="form-control" rows="3"><?=$race['raceDesc'];?></textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="race_datetime">Race Date</label>
-                            <input type="datetime-local" name="race_datetime" id="race_datetime" class="form-control">
+                            <input type="datetime-local" name="race_datetime" id="race_datetime" class="form-control" value="<?=$race['raceDateTime'];?>">
                         </div>
 
+                        <input name="race_id" id="race_id" type="hidden" value="<?=$race['raceID'];?>">
                         <button type="submit" class="btn btn-default">Submit Button</button>
 
                     </form>
@@ -98,10 +99,10 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="js/jquery.js"></script>
+<script src="../js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 
 </body>
 
